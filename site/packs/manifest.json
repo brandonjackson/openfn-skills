@@ -1,5 +1,5 @@
 {
-  "default": "productboard",
+  "default": "openfn-starter",
   "packs": [
     {
       "id": "productboard",
