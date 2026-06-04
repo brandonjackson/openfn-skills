@@ -31,6 +31,12 @@ CATEGORY_LABELS = {
     "strategy": "Strategy",
     "technical-collaboration": "Technical Collaboration",
     "ux": "UX",
+    "setting-up": "Setting Up",
+    "capacity-building": "Capacity Building",
+    "workflow-discovery": "Workflow Discovery",
+    "workflow-design": "Workflow Design",
+    "workflow-building": "Workflow Building",
+    "workflow-maintenance": "Workflow Maintenance",
 }
 
 
@@ -109,95 +115,39 @@ def build_productboard_pack() -> dict:
 
 
 def build_openfn_starter_pack() -> dict:
-    """Placeholder structure for the OpenFn starter pack.
-
-    Skills are scaffolded but prompts are empty — they'll be filled in by a
-    later job with more context on what each one should do.
-    """
-    planned = [
-        ("discovery", "Digital Transformation Discovery", [
-            ("partner-discovery-interview", "Partner Discovery Interview Guide"),
-            ("workflow-pain-point-synthesis", "Workflow Pain Point Synthesis"),
-            ("data-flow-mapping", "Data Flow Mapping Across Systems"),
-            ("system-of-record-audit", "System-of-Record Audit"),
-            ("manual-handoff-inventory", "Manual Handoff Inventory"),
-        ]),
-        ("integration-design", "Integration Design", [
-            ("workflow-blueprint", "Workflow Blueprint Generator"),
-            ("api-fit-assessment", "API Fit Assessment"),
-            ("data-mapping-spec", "Source-to-Target Data Mapping Spec"),
-            ("error-handling-strategy", "Error Handling & Retry Strategy"),
-            ("idempotency-design", "Idempotency Design Review"),
-            ("auth-strategy-picker", "Auth Strategy Picker (OAuth / API key / mTLS)"),
-        ]),
-        ("data-governance", "Data Governance & Privacy", [
-            ("pii-data-classification", "PII Data Classification"),
-            ("consent-flow-design", "Consent Flow Design"),
-            ("data-minimization-review", "Data Minimization Review"),
-            ("retention-policy-builder", "Retention Policy Builder"),
-        ]),
-        ("interoperability-standards", "Interoperability Standards", [
-            ("fhir-resource-selector", "FHIR Resource Selector"),
-            ("dhis2-tracker-design", "DHIS2 Tracker Program Design"),
-            ("openhie-component-fit", "OpenHIE Component Fit Check"),
-            ("hl7-vs-fhir-decision", "HL7 vs FHIR Decision Guide"),
-        ]),
-        ("implementation", "Implementation & Delivery", [
-            ("job-decomposition", "OpenFn Job Decomposition"),
-            ("adaptor-selection", "Adaptor Selection Guide"),
-            ("cron-vs-webhook-trigger", "Cron vs Webhook Trigger Decision"),
-            ("staging-rollout-plan", "Staging-to-Prod Rollout Plan"),
-        ]),
-        ("monitoring-ops", "Monitoring & Operations", [
-            ("run-failure-triage", "Run Failure Triage"),
-            ("alerting-strategy", "Alerting Strategy for Workflows"),
-            ("sla-definition", "SLA Definition for Integrations"),
-            ("incident-postmortem", "Integration Incident Post-Mortem"),
-        ]),
-        ("change-management", "Change Management", [
-            ("stakeholder-map", "Stakeholder Map for Digital Transformation"),
-            ("partner-onboarding-plan", "Implementing-Partner Onboarding Plan"),
-            ("training-rollout-plan", "End-User Training Rollout Plan"),
-            ("digital-readiness-assessment", "Digital Readiness Assessment"),
-        ]),
-        ("strategy", "Strategy & Funding", [
-            ("digital-public-goods-fit", "Digital Public Goods Fit Check"),
-            ("donor-narrative-builder", "Donor Narrative Builder"),
-            ("sustainability-plan", "Sustainability & Local Ownership Plan"),
-            ("theory-of-change-builder", "Theory of Change Builder"),
-        ]),
-    ]
-
-    skills: list[dict] = []
+    """Build the OpenFn starter pack from markdown files in openfn_starter/."""
+    src = ROOT / "openfn_starter"
+    skills: list[Skill] = []
     categories: list[dict] = []
-    for slug, label, items in planned:
-        ids: list[str] = []
-        for sid, title in items:
-            skills.append({
-                "id": sid,
-                "title": title,
-                "category": slug,
-                "category_label": label,
-                "description": "Coming soon — to be authored in a follow-up job.",
-                "source_url": None,
-                "prompt": "",
-                "planned": True,
+
+    for category_dir in sorted(p for p in src.iterdir() if p.is_dir()):
+        slug = category_dir.name
+        files = sorted(category_dir.glob("*.md"))
+        cat_skill_ids: list[str] = []
+        for md in files:
+            skill = parse_skill(md, slug)
+            if not skill:
+                continue
+            skills.append(skill)
+            cat_skill_ids.append(skill.id)
+        if cat_skill_ids:
+            categories.append({
+                "slug": slug,
+                "label": CATEGORY_LABELS.get(slug, slug.replace("-", " ").title()),
+                "skill_ids": cat_skill_ids,
             })
-            ids.append(sid)
-        categories.append({"slug": slug, "label": label, "skill_ids": ids})
 
     return {
         "id": "openfn-starter",
         "name": "OpenFn Starter Pack",
         "description": (
-            "Skills for teams running digital transformation projects with "
-            "OpenFn — discovery, integration design, governance, ops, and "
-            "change management. Skill bodies are stubs and will be authored "
-            "in a follow-up job."
+            "Skills for teams running workflow automation and digital "
+            "transformation projects with OpenFn — from initial setup and "
+            "discovery through design, building, and ongoing maintenance."
         ),
         "source_url": "https://www.openfn.org/",
         "categories": categories,
-        "skills": skills,
+        "skills": [asdict(s) for s in skills],
     }
 
 
