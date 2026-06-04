@@ -203,10 +203,10 @@ def build_openfn_starter_pack() -> dict:
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    packs = [build_productboard_pack(), build_openfn_starter_pack()]
+    packs = [build_openfn_starter_pack(), build_productboard_pack()]
 
     manifest = {
-        "default": "productboard",
+        "default": "openfn-starter",
         "packs": [
             {
                 "id": p["id"],
