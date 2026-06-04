@@ -1,0 +1,443 @@
+{
+  "id": "openfn-starter",
+  "name": "OpenFn Starter Pack",
+  "description": "Skills for teams running digital transformation projects with OpenFn \u2014 discovery, integration design, governance, ops, and change management. Skill bodies are stubs and will be authored in a follow-up job.",
+  "source_url": "https://www.openfn.org/",
+  "categories": [
+    {
+      "slug": "discovery",
+      "label": "Digital Transformation Discovery",
+      "skill_ids": [
+        "partner-discovery-interview",
+        "workflow-pain-point-synthesis",
+        "data-flow-mapping",
+        "system-of-record-audit",
+        "manual-handoff-inventory"
+      ]
+    },
+    {
+      "slug": "integration-design",
+      "label": "Integration Design",
+      "skill_ids": [
+        "workflow-blueprint",
+        "api-fit-assessment",
+        "data-mapping-spec",
+        "error-handling-strategy",
+        "idempotency-design",
+        "auth-strategy-picker"
+      ]
+    },
+    {
+      "slug": "data-governance",
+      "label": "Data Governance & Privacy",
+      "skill_ids": [
+        "pii-data-classification",
+        "consent-flow-design",
+        "data-minimization-review",
+        "retention-policy-builder"
+      ]
+    },
+    {
+      "slug": "interoperability-standards",
+      "label": "Interoperability Standards",
+      "skill_ids": [
+        "fhir-resource-selector",
+        "dhis2-tracker-design",
+        "openhie-component-fit",
+        "hl7-vs-fhir-decision"
+      ]
+    },
+    {
+      "slug": "implementation",
+      "label": "Implementation & Delivery",
+      "skill_ids": [
+        "job-decomposition",
+        "adaptor-selection",
+        "cron-vs-webhook-trigger",
+        "staging-rollout-plan"
+      ]
+    },
+    {
+      "slug": "monitoring-ops",
+      "label": "Monitoring & Operations",
+      "skill_ids": [
+        "run-failure-triage",
+        "alerting-strategy",
+        "sla-definition",
+        "incident-postmortem"
+      ]
+    },
+    {
+      "slug": "change-management",
+      "label": "Change Management",
+      "skill_ids": [
+        "stakeholder-map",
+        "partner-onboarding-plan",
+        "training-rollout-plan",
+        "digital-readiness-assessment"
+      ]
+    },
+    {
+      "slug": "strategy",
+      "label": "Strategy & Funding",
+      "skill_ids": [
+        "digital-public-goods-fit",
+        "donor-narrative-builder",
+        "sustainability-plan",
+        "theory-of-change-builder"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "partner-discovery-interview",
+      "title": "Partner Discovery Interview Guide",
+      "category": "discovery",
+      "category_label": "Digital Transformation Discovery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "workflow-pain-point-synthesis",
+      "title": "Workflow Pain Point Synthesis",
+      "category": "discovery",
+      "category_label": "Digital Transformation Discovery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "data-flow-mapping",
+      "title": "Data Flow Mapping Across Systems",
+      "category": "discovery",
+      "category_label": "Digital Transformation Discovery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "system-of-record-audit",
+      "title": "System-of-Record Audit",
+      "category": "discovery",
+      "category_label": "Digital Transformation Discovery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "manual-handoff-inventory",
+      "title": "Manual Handoff Inventory",
+      "category": "discovery",
+      "category_label": "Digital Transformation Discovery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "workflow-blueprint",
+      "title": "Workflow Blueprint Generator",
+      "category": "integration-design",
+      "category_label": "Integration Design",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "api-fit-assessment",
+      "title": "API Fit Assessment",
+      "category": "integration-design",
+      "category_label": "Integration Design",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "data-mapping-spec",
+      "title": "Source-to-Target Data Mapping Spec",
+      "category": "integration-design",
+      "category_label": "Integration Design",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "error-handling-strategy",
+      "title": "Error Handling & Retry Strategy",
+      "category": "integration-design",
+      "category_label": "Integration Design",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "idempotency-design",
+      "title": "Idempotency Design Review",
+      "category": "integration-design",
+      "category_label": "Integration Design",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "auth-strategy-picker",
+      "title": "Auth Strategy Picker (OAuth / API key / mTLS)",
+      "category": "integration-design",
+      "category_label": "Integration Design",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "pii-data-classification",
+      "title": "PII Data Classification",
+      "category": "data-governance",
+      "category_label": "Data Governance & Privacy",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "consent-flow-design",
+      "title": "Consent Flow Design",
+      "category": "data-governance",
+      "category_label": "Data Governance & Privacy",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "data-minimization-review",
+      "title": "Data Minimization Review",
+      "category": "data-governance",
+      "category_label": "Data Governance & Privacy",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "retention-policy-builder",
+      "title": "Retention Policy Builder",
+      "category": "data-governance",
+      "category_label": "Data Governance & Privacy",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "fhir-resource-selector",
+      "title": "FHIR Resource Selector",
+      "category": "interoperability-standards",
+      "category_label": "Interoperability Standards",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "dhis2-tracker-design",
+      "title": "DHIS2 Tracker Program Design",
+      "category": "interoperability-standards",
+      "category_label": "Interoperability Standards",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "openhie-component-fit",
+      "title": "OpenHIE Component Fit Check",
+      "category": "interoperability-standards",
+      "category_label": "Interoperability Standards",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "hl7-vs-fhir-decision",
+      "title": "HL7 vs FHIR Decision Guide",
+      "category": "interoperability-standards",
+      "category_label": "Interoperability Standards",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "job-decomposition",
+      "title": "OpenFn Job Decomposition",
+      "category": "implementation",
+      "category_label": "Implementation & Delivery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "adaptor-selection",
+      "title": "Adaptor Selection Guide",
+      "category": "implementation",
+      "category_label": "Implementation & Delivery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "cron-vs-webhook-trigger",
+      "title": "Cron vs Webhook Trigger Decision",
+      "category": "implementation",
+      "category_label": "Implementation & Delivery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "staging-rollout-plan",
+      "title": "Staging-to-Prod Rollout Plan",
+      "category": "implementation",
+      "category_label": "Implementation & Delivery",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "run-failure-triage",
+      "title": "Run Failure Triage",
+      "category": "monitoring-ops",
+      "category_label": "Monitoring & Operations",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "alerting-strategy",
+      "title": "Alerting Strategy for Workflows",
+      "category": "monitoring-ops",
+      "category_label": "Monitoring & Operations",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "sla-definition",
+      "title": "SLA Definition for Integrations",
+      "category": "monitoring-ops",
+      "category_label": "Monitoring & Operations",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "incident-postmortem",
+      "title": "Integration Incident Post-Mortem",
+      "category": "monitoring-ops",
+      "category_label": "Monitoring & Operations",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "stakeholder-map",
+      "title": "Stakeholder Map for Digital Transformation",
+      "category": "change-management",
+      "category_label": "Change Management",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "partner-onboarding-plan",
+      "title": "Implementing-Partner Onboarding Plan",
+      "category": "change-management",
+      "category_label": "Change Management",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "training-rollout-plan",
+      "title": "End-User Training Rollout Plan",
+      "category": "change-management",
+      "category_label": "Change Management",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "digital-readiness-assessment",
+      "title": "Digital Readiness Assessment",
+      "category": "change-management",
+      "category_label": "Change Management",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "digital-public-goods-fit",
+      "title": "Digital Public Goods Fit Check",
+      "category": "strategy",
+      "category_label": "Strategy & Funding",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "donor-narrative-builder",
+      "title": "Donor Narrative Builder",
+      "category": "strategy",
+      "category_label": "Strategy & Funding",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "sustainability-plan",
+      "title": "Sustainability & Local Ownership Plan",
+      "category": "strategy",
+      "category_label": "Strategy & Funding",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    },
+    {
+      "id": "theory-of-change-builder",
+      "title": "Theory of Change Builder",
+      "category": "strategy",
+      "category_label": "Strategy & Funding",
+      "description": "Coming soon \u2014 to be authored in a follow-up job.",
+      "source_url": null,
+      "prompt": "",
+      "planned": true
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenFn Skills Browser</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <span class="brand-mark">⚡</span>
+        <span class="brand-text">Skills Browser</span>
+      </div>
+      <label class="pack-picker">
+        <span class="pack-picker-label">Skill pack</span>
+        <select id="pack-select" aria-label="Select skill pack"></select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 id="pack-name">Loading…</h1>
+        <p id="pack-description" class="hero-description"></p>
+        <p class="hero-meta">
+          <span id="pack-stats"></span>
+          <a id="pack-source" class="hero-source" target="_blank" rel="noopener"></a>
+        </p>
+        <div class="filter-bar">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search skills…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <div id="category-filters" class="category-filters"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container grid-wrap">
+      <div id="results-count" class="results-count"></div>
+      <div id="skill-grid" class="skill-grid"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        No skills match your filters.
+      </div>
+    </section>
+  </main>
+
+  <div
+    id="skill-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    hidden
+  >
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-panel">
+      <header class="modal-header">
+        <div>
+          <div id="modal-category" class="modal-category"></div>
+          <h2 id="modal-title"></h2>
+        </div>
+        <button id="modal-close" class="icon-btn" aria-label="Close">×</button>
+      </header>
+      <p id="modal-description" class="modal-description"></p>
+      <div class="modal-actions">
+        <button id="copy-prompt" class="primary-btn">Copy prompt</button>
+        <a id="modal-source" class="ghost-btn" target="_blank" rel="noopener" hidden>
+          View source ↗
+        </a>
+      </div>
+      <pre id="modal-prompt" class="prompt-block"></pre>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>Inspired by Productboard's PM prompt library.</span>
+      <a href="https://github.com/brandonjackson/openfn-skills" target="_blank" rel="noopener">
+        github.com/brandonjackson/openfn-skills
+      </a>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
