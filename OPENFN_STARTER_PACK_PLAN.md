@@ -34,22 +34,20 @@ The pack targets three overlapping personas:
 Prompts should assume the user knows their domain (health, ag, social
 protection, etc.) but may be new to integration patterns and OpenFn's primitives.
 
-## Categories (proposed)
+## Categories
 
-Mirroring Productboard's 16-category structure with 8 categories of 4–6 prompts
-each (~35 skills total in v1). The categories are scaffolded already in
-`scripts/build_packs.py` → `build_openfn_starter_pack()` as empty stubs.
+6 categories with 5–8 skills each (40 skills total), following the lifecycle of
+an OpenFn workflow automation project. Skills are authored as markdown files in
+`openfn_starter/<category>/` and built into JSON by `scripts/build_packs.py`.
 
-| Category | Purpose |
-|---|---|
-| **Discovery** | Understand the workflow, partners, and pain points before designing anything |
-| **Integration Design** | Translate workflows into source-to-target mappings, auth, error handling |
-| **Data Governance & Privacy** | PII handling, consent, retention, minimisation |
-| **Interoperability Standards** | FHIR, DHIS2, OpenHIE, HL7 decision support |
-| **Implementation & Delivery** | OpenFn-specific: jobs, adaptors, triggers, deployments |
-| **Monitoring & Operations** | Run failure triage, alerting, SLAs, post-mortems |
-| **Change Management** | Stakeholder mapping, training, readiness assessments |
-| **Strategy & Funding** | DPG fit, donor narratives, sustainability, theory of change |
+| Category | Skills | Purpose |
+|---|---|---|
+| **Setting Up** | 6 | Map the technology landscape, APIs, data ownership, and quality before building anything |
+| **Capacity Building** | 5 | Build team knowledge — concept introductions, readiness assessment, error-based learning, handover docs |
+| **Workflow Discovery** | 8 | Map existing processes, identify pain points, prioritize opportunities, generate briefs for stakeholders |
+| **Workflow Design** | 7 | Turn requirements into workflow specs, data mappings, error strategies, and stakeholder review docs |
+| **Workflow Building** | 7 | Generate code, apply best practices, identify edge cases, create tests, diagnose errors, assess readiness |
+| **Workflow Maintenance** | 7 | Monitor performance, detect anomalies, propose fixes, assess upstream changes, run health checks |
 
 ## Prompt structure
 
@@ -83,39 +81,15 @@ walkthroughs with frontline staff".
 
 ## Authoring workflow
 
-The skills browser is already wired to display planned skills as stubs with a
-"Planned" tag, so authoring is incremental and visible.
-
-1. **Phase 1 — Scaffold (done).** The 35 stub skills are listed in
-   `scripts/build_packs.py` so the browser renders the full pack shape with
-   empty prompt bodies.
-2. **Phase 2 — Draft (next job).** Author the prompt body for each skill as a
-   markdown file in `openfn_starter/<category>/<skill-id>.md` matching the same
-   format as `example_prompts/`. The next job will receive more context (e.g.
-   real OpenFn workflows, adaptor docs, partner interview notes) to ground each
-   prompt.
-3. **Phase 3 — Generate.** Update `scripts/build_packs.py` to read from
-   `openfn_starter/` the same way it reads `example_prompts/`, replacing the
-   inline `planned` stubs. Re-run the script to regenerate
-   `site/packs/openfn-starter.json`.
-4. **Phase 4 — Polish.** Tag each skill with `audience` (partner / programme /
-   internal) and `complexity` (foundational / intermediate / advanced), add
-   filtering in the browser, and link related prompts.
-
-## Suggested follow-on prompts to author (Phase 2 input)
-
-For the next job, provide context on:
-
-- One or two real OpenFn customer workflows (sanitised) — e.g. a CommCare ↔
-  DHIS2 sync, or an OpenMRS ↔ OpenSRP bridge — so prompts can name concrete
-  examples.
-- OpenFn primitives reference (adaptor / job / trigger / state / credential)
-  the prompts should consistently use.
-- Example outputs of a "good" partner discovery interview, data mapping spec,
-  and incident post-mortem, so the framework phases produce artefacts that
-  match the OpenFn house style.
-- Any existing OpenFn playbooks, runbooks, or templates that should be
-  referenced or replaced.
+1. **Phase 1 — Scaffold (done).** Categories and skill IDs defined.
+2. **Phase 2 — Draft (done).** All 40 skills authored as markdown files in
+   `openfn_starter/<category>/<skill-id>.md`.
+3. **Phase 3 — Generate (done).** `scripts/build_packs.py` reads from
+   `openfn_starter/` the same way it reads `example_prompts/`. Run
+   `python3 scripts/build_packs.py` to regenerate `site/packs/openfn-starter.json`.
+4. **Phase 4 — Polish (future).** Tag each skill with `audience` (partner /
+   programme / internal) and `complexity` (foundational / intermediate /
+   advanced), add filtering in the browser, and link related prompts.
 
 ## File layout (after Phase 3)
 
