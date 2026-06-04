@@ -1,0 +1,21 @@
+{
+  "default": "productboard",
+  "packs": [
+    {
+      "id": "productboard",
+      "name": "Productboard PM Prompts",
+      "description": "134 product management prompts across 16 categories, scraped from Productboard's public PM prompt library.",
+      "skill_count": 134,
+      "category_count": 16,
+      "file": "productboard.json"
+    },
+    {
+      "id": "openfn-starter",
+      "name": "OpenFn Starter Pack",
+      "description": "Skills for teams running digital transformation projects with OpenFn \u2014 discovery, integration design, governance, ops, and change management. Skill bodies are stubs and will be authored in a follow-up job.",
+      "skill_count": 35,
+      "category_count": 8,
+      "file": "openfn-starter.json"
+    }
+  ]
+}
