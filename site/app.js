@@ -123,7 +123,7 @@ function renderHero() {
 
 function renderCategoryFilters() {
   const p = state.pack;
-  const chips = [
+  const items = [
     { slug: "all", label: "All", count: p.skills.length },
     ...p.categories.map((c) => ({
       slug: c.slug,
@@ -131,15 +131,17 @@ function renderCategoryFilters() {
       count: c.skill_ids.length,
     })),
   ];
-  els.categoryFilters.innerHTML = chips
-    .map(
-      (c) =>
-        `<button type="button" class="cat-chip${
-          c.slug === state.activeCategory ? " active" : ""
-        }" data-cat="${escapeAttr(c.slug)}">${escapeHtml(c.label)}<span class="count">${c.count}</span></button>`
-    )
-    .join("");
-  for (const btn of els.categoryFilters.querySelectorAll(".cat-chip")) {
+  els.categoryFilters.innerHTML =
+    `<p class="nav-heading">Categories</p>` +
+    items
+      .map(
+        (c) =>
+          `<button type="button" class="cat-link${
+            c.slug === state.activeCategory ? " active" : ""
+          }" data-cat="${escapeAttr(c.slug)}">${escapeHtml(c.label)}<span class="count">${c.count}</span></button>`
+      )
+      .join("");
+  for (const btn of els.categoryFilters.querySelectorAll(".cat-link")) {
     btn.addEventListener("click", () => {
       state.activeCategory = btn.dataset.cat;
       renderCategoryFilters();
