@@ -31,12 +31,11 @@ CATEGORY_LABELS = {
     "strategy": "Strategy",
     "technical-collaboration": "Technical Collaboration",
     "ux": "UX",
-    "setting-up": "Setting Up",
+    "ecosystem-analysis": "Ecosystem Analysis",
+    "service-design": "Service Design",
+    "workflow-delivery": "Workflow Delivery",
+    "test-and-learn": "Test & Learn",
     "capacity-building": "Capacity Building",
-    "workflow-discovery": "Workflow Discovery",
-    "workflow-design": "Workflow Design",
-    "workflow-building": "Workflow Building",
-    "workflow-maintenance": "Workflow Maintenance",
 }
 
 
@@ -114,14 +113,25 @@ def build_productboard_pack() -> dict:
     }
 
 
-def build_openfn_starter_pack() -> dict:
-    """Build the OpenFn starter pack from markdown files in openfn_starter/."""
-    src = ROOT / "openfn_starter"
+def build_openfn_mvp_pack() -> dict:
+    """Build the OpenFn Skills MVP pack from markdown files in openfn_mvp/."""
+    src = ROOT / "openfn_mvp"
     skills: list[Skill] = []
     categories: list[dict] = []
 
-    for category_dir in sorted(p for p in src.iterdir() if p.is_dir()):
-        slug = category_dir.name
+    category_order = [
+        "ecosystem-analysis",
+        "service-design",
+        "workflow-delivery",
+        "test-and-learn",
+        "operations",
+        "capacity-building",
+    ]
+
+    for slug in category_order:
+        category_dir = src / slug
+        if not category_dir.is_dir():
+            continue
         files = sorted(category_dir.glob("*.md"))
         cat_skill_ids: list[str] = []
         for md in files:
@@ -138,12 +148,13 @@ def build_openfn_starter_pack() -> dict:
             })
 
     return {
-        "id": "openfn-starter",
-        "name": "OpenFn Starter Pack",
+        "id": "openfn-mvp",
+        "name": "OpenFn Skills MVP",
         "description": (
-            "Skills for teams running workflow automation and digital "
-            "transformation projects with OpenFn — from initial setup and "
-            "discovery through design, building, and ongoing maintenance."
+            "39 skills across the full project lifecycle for teams running "
+            "digital transformation and workflow automation with OpenFn — "
+            "from ecosystem analysis through service design, delivery, "
+            "piloting, operations, and capacity building."
         ),
         "source_url": "https://www.openfn.org/",
         "categories": categories,
@@ -153,10 +164,10 @@ def build_openfn_starter_pack() -> dict:
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    packs = [build_openfn_starter_pack(), build_productboard_pack()]
+    packs = [build_openfn_mvp_pack(), build_productboard_pack()]
 
     manifest = {
-        "default": "openfn-starter",
+        "default": "openfn-mvp",
         "packs": [
             {
                 "id": p["id"],
