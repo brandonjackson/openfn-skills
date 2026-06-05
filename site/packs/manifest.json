@@ -1,13 +1,13 @@
 {
-  "default": "openfn-starter",
+  "default": "openfn-mvp",
   "packs": [
     {
-      "id": "openfn-starter",
-      "name": "OpenFn Starter Pack",
-      "description": "Skills for teams running workflow automation and digital transformation projects with OpenFn \u2014 from initial setup and discovery through design, building, and ongoing maintenance.",
-      "skill_count": 40,
+      "id": "openfn-mvp",
+      "name": "OpenFn Skills MVP",
+      "description": "39 skills across the full project lifecycle for teams running digital transformation and workflow automation with OpenFn \u2014 from ecosystem analysis through service design, delivery, piloting, operations, and capacity building.",
+      "skill_count": 39,
       "category_count": 6,
-      "file": "openfn-starter.json"
+      "file": "openfn-mvp.json"
     },
     {
       "id": "productboard",
